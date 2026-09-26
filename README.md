@@ -15,61 +15,58 @@
 - Supports hourly, daily, selected weekdays, and monthly backup schedules with WorkManager.
 
 
-💾 Features
+============= 💾 Features ================
+
 📱 SMS Backup
+
 Reads all device SMS messages
-
 Saves them in CSV, JSON, or XML
-
 Incremental backups — no duplicates
-
 Hash‑based tracking for previously saved entries
 
 📞 Call Log Backup
+
 Incoming, outgoing, missed, rejected
-
 Same incremental + hash logic
-
 Clean, structured output formats
 
 📂 Storage Options
+
 Prefer SD Card when available
-
 Falls back to Downloads/ with a dedicated folder
-
 Scoped‑storage‑safe design for Android 11–15
 
 📊 Dashboard
+
 Last backup time
-
 Last failure + reason
-
 Total SMS backed up
-
 Total call logs backed up
-
 Backup file locations
 
 🔄 Live Views
+
 Tab for all SMS
-
 Tab for all Call Logs
-
 Refresh buttons for both
 
 ⏰ Scheduler
+
 Hourly
-
 Daily
-
 Weekly
-
 Monthly
-
 Custom time selection
-
 Powered by WorkManager
 
+🧪 Tech Stack
+
+Android (11–15)
+Kotlin
+Jetpack Components
+WorkManager
+Room (for hash tracking)
+SAF (Storage Access Framework)
 
 
 ## Screens
@@ -114,6 +111,9 @@ SMS and Call Log permissions are restricted by Android and Google Play policy. T
 
 Scheduled execution uses WorkManager, which is best-effort. Android may delay a scheduled backup for battery and system constraints; it is not an exact alarm.
 
+🚀 Getting Started
+Clone the repo: git clone https://github.com/nayyarsyed/SMS_CALL_LOG_LOCAL_GH
+
 ## Build
 
 Open the project in Android Studio, install the Android SDK configured by the Gradle project, and run the `app` configuration. On Windows, the debug build can be created from the project directory with:
@@ -138,4 +138,25 @@ The debug APK is generated at `app/build/outputs/apk/debug/app-debug.apk`.
 
 ## License
 
-No license has been specified yet. All rights and reuse permissions remain with the project owner unless a license is added.
+📜 License
+MIT License — free to use, modify, fork, remix, and distribute.
+
+Copyright (c) 2024 Syed N.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
