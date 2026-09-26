@@ -14,6 +14,64 @@
 - Shows backup counts, last success/failure, and failure reasons on the dashboard.
 - Supports hourly, daily, selected weekdays, and monthly backup schedules with WorkManager.
 
+
+💾 Features
+📱 SMS Backup
+Reads all device SMS messages
+
+Saves them in CSV, JSON, or XML
+
+Incremental backups — no duplicates
+
+Hash‑based tracking for previously saved entries
+
+📞 Call Log Backup
+Incoming, outgoing, missed, rejected
+
+Same incremental + hash logic
+
+Clean, structured output formats
+
+📂 Storage Options
+Prefer SD Card when available
+
+Falls back to Downloads/ with a dedicated folder
+
+Scoped‑storage‑safe design for Android 11–15
+
+📊 Dashboard
+Last backup time
+
+Last failure + reason
+
+Total SMS backed up
+
+Total call logs backed up
+
+Backup file locations
+
+🔄 Live Views
+Tab for all SMS
+
+Tab for all Call Logs
+
+Refresh buttons for both
+
+⏰ Scheduler
+Hourly
+
+Daily
+
+Weekly
+
+Monthly
+
+Custom time selection
+
+Powered by WorkManager
+
+
+
 ## Screens
 
 | Dashboard | SMS | Call Logs |
