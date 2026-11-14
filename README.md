@@ -4,6 +4,12 @@
 
 **No cloud upload is implemented.** Backups are written to the device or user-selected storage. They contain sensitive personal data, so protect the files and share them only with people you trust.
 
+## Built with AI, reviewed with engineering judgment
+
+![Illustration: an AI-assisted rebuild of the local SMS and call log backup app; this is a concept graphic, not an app screenshot.](docs/ai-assisted-local-backup.svg)
+
+The original project took about two months in 2019. Recreating it with AI took a few prompts to get a working first pass, followed by iterations to inspect constraints, fix issues, and review the result. The comparison is personal experience, not a controlled benchmark.
+
 ## What it does
 
 - Lists device SMS messages and call logs in separate tabs.
@@ -61,11 +67,11 @@ Powered by WorkManager
 
 🧪 Tech Stack
 
-Android (11–15)
+Android (11+; device and permission behavior varies)
 Kotlin
 Jetpack Components
 WorkManager
-Room (for hash tracking)
+SQLite (for hash tracking)
 SAF (Storage Access Framework)
 
 

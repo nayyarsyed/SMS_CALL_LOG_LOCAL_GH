@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">SMS and Call Logs Local Backup: a project reimagined with AI</title>
+  <desc id="description">An illustrative dashboard and technical overview. A long-awaited Android project took about two months in 2019; AI-assisted redevelopment took a few prompts, followed by engineering review.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101827"/>
+      <stop offset="1" stop-color="#172b3b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#63e6be"/>
+      <stop offset="1" stop-color="#4dabf7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" rx="28" fill="url(#background)"/>
+  <circle cx="1030" cy="90" r="190" fill="#4dabf7" opacity=".07"/>
+  <circle cx="1090" cy="590" r="220" fill="#63e6be" opacity=".06"/>
+
+  <text x="72" y="82" fill="#63e6be" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">A PERSONAL PROJECT, REIMAGINED</text>
+  <text x="72" y="145" fill="#f3f7fb" font-family="Arial, sans-serif" font-size="43" font-weight="700">Two months in 2019.</text>
+  <text x="72" y="198" fill="#f3f7fb" font-family="Arial, sans-serif" font-size="43" font-weight="700">A few prompts today.</text>
+  <text x="74" y="240" fill="#a9bacb" font-family="Arial, sans-serif" font-size="19">AI helped accelerate the first pass. Review still mattered.</text>
+
+  <rect x="72" y="282" width="612" height="205" rx="18" fill="#1d2b3a" stroke="#34485a" stroke-width="1.5"/>
+  <text x="100" y="322" fill="#dce8f2" font-family="Arial, sans-serif" font-size="18" font-weight="700">SMS &amp; CALL LOGS · LOCAL BACKUP</text>
+  <text x="100" y="354" fill="#91a6b8" font-family="Arial, sans-serif" font-size="14">Illustrative dashboard — not an app screenshot</text>
+
+  <rect x="100" y="374" width="166" height="78" rx="12" fill="#26394a"/>
+  <text x="118" y="406" fill="#91a6b8" font-family="Arial, sans-serif" font-size="13">SMS BACKUPS</text>
+  <text x="118" y="436" fill="#f3f7fb" font-family="Arial, sans-serif" font-size="23" font-weight="700">On device</text>
+
+  <rect x="278" y="374" width="166" height="78" rx="12" fill="#26394a"/>
+  <text x="296" y="406" fill="#91a6b8" font-family="Arial, sans-serif" font-size="13">CALL LOGS</text>
+  <text x="296" y="436" fill="#f3f7fb" font-family="Arial, sans-serif" font-size="23" font-weight="700">On device</text>
+
+  <rect x="456" y="374" width="200" height="78" rx="12" fill="#26394a"/>
+  <text x="474" y="406" fill="#91a6b8" font-family="Arial, sans-serif" font-size="13">EXPORT FORMATS</text>
+  <text x="474" y="436" fill="#63e6be" font-family="Arial, sans-serif" font-size="21" font-weight="700">JSON · XML · CSV</text>
+
+  <text x="72" y="540" fill="#f3f7fb" font-family="Arial, sans-serif" font-size="17" font-weight="700">AI speeds up building.</text>
+  <text x="72" y="570" fill="#a9bacb" font-family="Arial, sans-serif" font-size="16">Engineering judgment shapes what ships.</text>
+
+  <rect x="760" y="282" width="368" height="205" rx="18" fill="#132230" stroke="#34485a" stroke-width="1.5"/>
+  <text x="792" y="326" fill="#91a6b8" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">UNDER THE HOOD</text>
+  <text x="792" y="366" fill="#63e6be" font-family="Courier New, monospace" font-size="16">SMS / CallLog</text>
+  <text x="940" y="366" fill="#91a6b8" font-family="Courier New, monospace" font-size="16">→ SHA-256</text>
+  <text x="792" y="398" fill="#91a6b8" font-family="Courier New, monospace" font-size="16">→ SQLite index</text>
+  <text x="792" y="430" fill="#91a6b8" font-family="Courier New, monospace" font-size="16">→ SAF / MediaStore</text>
+  <text x="792" y="462" fill="#91a6b8" font-family="Courier New, monospace" font-size="16">→ WorkManager</text>
+
+  <text x="760" y="540" fill="#91a6b8" font-family="Arial, sans-serif" font-size="14">Local-first · Exported files are not encrypted</text>
+  <text x="760" y="570" fill="#4dabf7" font-family="Arial, sans-serif" font-size="15">github.com/nayyarsyed/SMS_CALL_LOG_LOCAL_GH</text>
+</svg>
