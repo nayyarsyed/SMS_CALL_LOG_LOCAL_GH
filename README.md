@@ -107,6 +107,14 @@ The app stages a complete, valid snapshot and replaces the corresponding file ra
 
 **Security review status: not certified as “100% safe.”** Static review identified the two possible exposure scenarios above (unencrypted exports and CSV formula interpretation). They are documented here, not fixed. Review your intended release, test on supported devices, and decide whether those risks are acceptable before distributing the app.
 
+## Personal-use notice and data-loss disclaimer
+
+This project is provided as a free utility for personal use. It is not a guaranteed backup or archival service, and it currently does not restore records to Android. Backup runs can be incomplete or fail because of permission changes, storage-provider behavior, unavailable or damaged storage, device/vendor differences, or software defects. Files may also be lost, overwritten, corrupted, or exposed.
+
+Do not rely on this app as your only copy of important messages or call history. Check that the generated files exist and contain the expected records, and keep an independent copy in a location you control. You are responsible for deciding whether the app is suitable for your use and for protecting any exported files.
+
+The software is provided **“AS IS,” without warranty of any kind**. To the extent permitted by applicable law, the project authors and contributors are not liable for data loss, device or storage problems, or other damages arising from using or being unable to use the software. See the MIT License below for the full warranty and liability terms.
+
 ## Android compatibility
 
 The configured minimum SDK is **Android 11 (API 30)**, target SDK is **35**, and compile SDK is **36.1**. Android 11–16 are the intended range, but real-device testing is still necessary. Android 17 uses API 37 and has not been built or tested with this project; Android 17 installation and behavior are therefore **not guaranteed**.
