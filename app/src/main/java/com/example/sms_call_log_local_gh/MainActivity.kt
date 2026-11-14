@@ -8,8 +8,11 @@ import android.os.Bundle
 import android.os.Environment
 import android.os.storage.StorageManager
 import android.util.Log
+import android.util.TypedValue
 import android.view.Gravity
+import android.view.View
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
@@ -17,6 +20,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.widget.TextViewCompat
 import androidx.documentfile.provider.DocumentFile
 import com.google.android.material.card.MaterialCardView
 import java.io.IOException
@@ -102,14 +106,33 @@ class MainActivity : AppCompatActivity() {
             setPadding(0, dp(12), 0, dp(12))
         }
         listOf("Dashboard", "SMS", "Call Logs").forEachIndexed { index, label ->
-            val tab = button(label) {
-                selectedTab = index
-                render()
+            val tab = com.google.android.material.button.MaterialButton(this).apply {
+                text = label
+                isAllCaps = false
+                maxLines = 1
+                ellipsize = null
+                gravity = Gravity.CENTER
+                minWidth = 0
+                minimumWidth = 0
+                insetLeft = 0
+                insetRight = 0
+                setPadding(dp(2), 0, dp(2), 0)
+                cornerRadius = dp(4)
+                TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(
+                    this,
+                    10,
+                    14,
+                    1,
+                    TypedValue.COMPLEX_UNIT_SP
+                )
+                setOnClickListener {
+                    selectedTab = index
+                    render()
+                }
             }
-            tab.isAllCaps = false
             tab.alpha = if (selectedTab == index) 1f else 0.62f
             tabs.addView(tab, LinearLayout.LayoutParams(0, dp(48), 1f).apply {
-                marginEnd = dp(6)
+                marginEnd = if (index < 2) dp(6) else 0
             })
         }
         root.addView(tabs)
@@ -117,9 +140,45 @@ class MainActivity : AppCompatActivity() {
         contentArea = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL }
         val scroll = ScrollView(this).apply {
             isFillViewport = true
+            isVerticalScrollBarEnabled = false
+            isScrollbarFadingEnabled = true
             addView(contentArea)
         }
-        root.addView(scroll, LinearLayout.LayoutParams(
+        val fastScrollBar = FastScrollBar(this).apply {
+            visibility = if (selectedTab == 0) View.GONE else View.INVISIBLE
+            onProgressChanged = { progress ->
+                val maxScroll = (contentArea.height - scroll.height).coerceAtLeast(0)
+                scroll.scrollTo(0, (maxScroll * progress).toInt())
+            }
+        }
+        val scrollFrame = FrameLayout(this).apply {
+            addView(scroll, FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT,
+                FrameLayout.LayoutParams.MATCH_PARENT
+            ).apply {
+                if (selectedTab != 0) marginEnd = dp(48)
+            })
+            addView(fastScrollBar, FrameLayout.LayoutParams(
+                dp(48),
+                FrameLayout.LayoutParams.MATCH_PARENT,
+                Gravity.END
+            ))
+        }
+        fun updateFastScrollBar() {
+            scroll.post {
+                if (selectedTab == 0) {
+                    fastScrollBar.visibility = View.GONE
+                    return@post
+                }
+                val maxScroll = (contentArea.height - scroll.height).coerceAtLeast(0)
+                fastScrollBar.updatePosition(scroll.scrollY, maxScroll)
+            }
+        }
+        scroll.setOnScrollChangeListener { _, _, _, _, _ -> updateFastScrollBar() }
+        contentArea.addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
+            updateFastScrollBar()
+        }
+        root.addView(scrollFrame, LinearLayout.LayoutParams(
             LinearLayout.LayoutParams.MATCH_PARENT, 0, 1f
         ))
         setContentView(root)
